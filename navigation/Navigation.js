@@ -1,31 +1,38 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import HomeScreen from '../screens/HomeScreen';
-import DetailsScreen from '../screens/DetailsScreen.js';
-
+import DetailsScreen from '../screens/DetailsScreen';
+import DrawerContent from '../components/DrawerContent'; // You need to create this component
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
-function Navigation() {
+function HomeStack() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen 
-        name="Home" 
-        component={HomeScreen}
-        options={{title:"Home"}} />
 
-        <Stack.Screen 
-        name="Details" 
-        component={DetailsScreen} 
-        options={{title:"Details"}}/>
-
-        
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Drawer.Navigator>
+    <Drawer.Screen name="Home" component={HomeScreen} />
+    <Drawer.Screen name="Details" component={DetailsScreen} />
+  </Drawer.Navigator>
   );
 }
 
-export default Navigation
+function Navigation() {
+  return (
+
+    <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen
+        name="HomeStack"
+        component={HomeStack}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  </NavigationContainer>
+  );
+}
+
+export default Navigation;

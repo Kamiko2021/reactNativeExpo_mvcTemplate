@@ -10,13 +10,6 @@ const HomeScreen = ({navigation}) => {
   return (
     <View>
       <Text>Welcome to the Home Screen</Text>
-      {/* {user && <Text>User: {user.name}</Text>} */}
-
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
     </View>
   );
 };
