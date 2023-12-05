@@ -3,8 +3,12 @@ import User from '../models/User';
 
 class UserService {
   static async fetchUser(userId) {
-    // API call to fetch user data
-    // Return a User instance
+    try{
+      console.log(userId)
+
+    }catch(e){
+      console.error(e.message)
+    }
   }
 }
 
