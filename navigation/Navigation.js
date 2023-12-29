@@ -3,16 +3,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import HomeScreen from '../screens/HomeScreen';
-import DetailsScreen from '../screens/DetailsScreen';
-import DrawerContent from '../components/DrawerContent'; // You need to create this component
+import HomeScreen from '../screens/Home/HomeScreen';
+import DetailsScreen from '../screens/Dashboard/DetailsScreen';
+
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-function HomeStack() {
+function DrawerScreens() {
   return (
-
     <Drawer.Navigator>
     <Drawer.Screen name="Home" component={HomeScreen} />
     <Drawer.Screen name="Details" component={DetailsScreen} />
@@ -27,7 +26,7 @@ function Navigation() {
     <Stack.Navigator>
       <Stack.Screen
         name="HomeStack"
-        component={HomeStack}
+        component={DrawerScreens}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

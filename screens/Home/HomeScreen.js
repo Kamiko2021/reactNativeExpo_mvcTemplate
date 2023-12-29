@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-import useUserController from '../controllers/UserControler';
+import useUserController from '../../controllers/UserControler';
 
 
 const HomeScreen = ({navigation}) => {
@@ -10,6 +10,7 @@ const HomeScreen = ({navigation}) => {
   return (
     <View>
       <Text>Welcome to the Home Screen</Text>
+      <Text>Thank you for visiting</Text>
     </View>
   );
 };
